@@ -20,12 +20,12 @@ class UserDetailViewController {
 Swinject also supports arguments but Swift compiler cannot check the arguments statically. It can cause a human mistake.
 
 ```swift
-// takes 1 parameter
+// it takes 1 parameter
 container.register(UserDetailViewController.self) { r, userID in
   return UserDetailViewController(userID: userID, userService: r.resolve(UserServiceType.self)!)
 }
 
-// pass 3 parameters then it will return nil
+// when pass 3 parameters it will return nil
 container.resolve(UserServiceType.self, arguments: 1, 2, 3)
 ```
 
@@ -53,12 +53,12 @@ The code above becomes short and readable with SwinjectFactory.
 
 ```swift
 // register UserDetailViewController factory
+container.register(factory: UserDetailViewController.self)
+
+// register a component that has a dependency to UserDetailViewController
 container.register(UserListViewController.self) { r in
   UserListViewController(detailFactory: r.resolve(factory: UserDetailViewController.self)!)
 }
-
-// register a component that has a dependency to UserDetailViewController
-container.register(factory: UserDetailViewController.self)
 ```
 
 It can be even shorter with [SwinjectAutoregistration](https://github.com/Swinject/SwinjectAutoregistration).
@@ -73,21 +73,18 @@ container.autoregister(UserListViewControllerType.self, initializer: UserListVie
 Conform your component to `FactoryComponent`. This protocol requires a single static variable: `factory`. This is a curried function which takes a `Swinject.Resolver` as a first function parameter. The nested function takes a runtime parameter which is required for constructing a component class. It finally returns a service type.
 
 ```swift
-protocol UserDetailViewControllerType { // not necessary
-}
-
 class UserDetailViewController: FactoryComponent {
   init(userID: Int, userService: UserServiceType) {
   }
 
   // (Resolver) -> (Runtime Paramters) -> Service
-  static var factory: (Resolver) -> (_ userID: Int) -> UserDetailViewControllerType {
-    return autocreate(UserDetailViewController.init)
+  static var factory: (Resolver) -> (_ userID: Int) -> UserDetailViewController {
+    return self.autocreate(UserDetailViewController.init) // it will automatically fill parameters
   }
 }
 ```
 
-Here is an example of using `UserDetailViewControllerType` or `UserDetailViewController` as a dependency:
+Here is an example of using `UserDetailViewController` as a dependency:
 
 ```swift
 class UserListViewController {
