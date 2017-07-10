@@ -2,7 +2,7 @@
 # Copyright (c) Yoichi Tagaya
 # https://github.com/Swinject/Swinject
 
-files="Sources/SwinjectFactory/FactoryInjectable+Factory"
+files="Sources/SwinjectFactory/FactoryComponent.Arguments"
 
 for file in $files; do
   echo "Generating code to $file.swift"

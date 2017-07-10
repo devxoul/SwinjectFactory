@@ -1,4 +1,3 @@
-import Swinject
 import SwinjectFactory
 
 struct User {
@@ -18,7 +17,7 @@ class UserService: UserServiceType {
 
 
 protocol UserListViewControllerType {
-  func detailViewController(userID: Int) -> UserDetailViewController
+  func detailViewController(userID: Int) -> UserDetailViewControllerType
 }
 
 class UserListViewController: UserListViewControllerType {
@@ -28,24 +27,24 @@ class UserListViewController: UserListViewControllerType {
     self.detailFactory = detailFactory
   }
 
-  func detailViewController(userID: Int) -> UserDetailViewController {
+  func detailViewController(userID: Int) -> UserDetailViewControllerType {
     return self.detailFactory(userID)
   }
 }
 
 
-protocol UserDetailViewControllerType: FactoryInjectable {
+protocol UserDetailViewControllerType {
   var user: User { get }
 }
 
-class UserDetailViewController: UserDetailViewControllerType {
+class UserDetailViewController: UserDetailViewControllerType, FactoryComponent {
   let user: User
 
   init(userID: Int, userService: UserServiceType) {
     self.user = userService.fetchUser(id: userID)
   }
 
-  static var inject: (Resolver) -> (_ userID: Int) -> UserDetailViewController {
-    return self.factory.create(UserDetailViewController.init)
+  static var factory: (Resolver) -> (_ userID: Int) -> UserDetailViewControllerType {
+    return self.autocreate(UserDetailViewController.init)
   }
 }

@@ -4,7 +4,7 @@ import protocol Swinject.Resolver
 <% arguments = 0..9 %>
 <% dependencies = 0..9 %>
 
-public extension FactoryExtension where Base: FactoryInjectable {
+public extension FactoryComponent {
 <%
   for arg in arguments
     for dep in dependencies
@@ -25,7 +25,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
       initializer_params = argument_params + dependencies_params
       initializer_params_str = initializer_params.join(", ")
 %>
-  public static func create<<%= generic_types_str %>>(
+  public static func autocreate<<%= generic_types_str %>>(
     _ initializer: @escaping (<%= initializer_types_str %>) -> Service
   ) -> (Resolver) -> (<%= argument_types_str %>) -> Service {
     return { resolver in

@@ -7,9 +7,9 @@ class SwinjectFactoryTests: XCTestCase {
     let container = Container()
     container.register(UserServiceType.self) { r in UserService() }
     container.register(UserListViewControllerType.self) { r in
-      UserListViewController(detailFactory: r.factory.resolve(UserDetailViewController.self)!)
+      UserListViewController(detailFactory: r.resolve(factory: UserDetailViewController.self)!)
     }
-    container.factory.register(UserDetailViewController.self)
+    container.register(factory: UserDetailViewController.self)
 
     let listViewController = container.resolve(UserListViewControllerType.self)!
     let detailViewController = listViewController.detailViewController(userID: 123)

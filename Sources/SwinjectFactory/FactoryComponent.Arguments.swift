@@ -3,8 +3,8 @@
 import protocol Swinject.Resolver
 
 
-public extension FactoryExtension where Base: FactoryInjectable {
-  public static func create<Service>(
+public extension FactoryComponent {
+  public static func autocreate<Service>(
     _ initializer: @escaping () -> Service
   ) -> (Resolver) -> () -> Service {
     return { resolver in
@@ -14,7 +14,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Dep1>(
+  public static func autocreate<Service, Dep1>(
     _ initializer: @escaping (Dep1) -> Service
   ) -> (Resolver) -> () -> Service {
     return { resolver in
@@ -25,7 +25,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Dep1, Dep2>(
+  public static func autocreate<Service, Dep1, Dep2>(
     _ initializer: @escaping (Dep1, Dep2) -> Service
   ) -> (Resolver) -> () -> Service {
     return { resolver in
@@ -37,7 +37,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Dep1, Dep2, Dep3>(
+  public static func autocreate<Service, Dep1, Dep2, Dep3>(
     _ initializer: @escaping (Dep1, Dep2, Dep3) -> Service
   ) -> (Resolver) -> () -> Service {
     return { resolver in
@@ -50,7 +50,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Dep1, Dep2, Dep3, Dep4>(
+  public static func autocreate<Service, Dep1, Dep2, Dep3, Dep4>(
     _ initializer: @escaping (Dep1, Dep2, Dep3, Dep4) -> Service
   ) -> (Resolver) -> () -> Service {
     return { resolver in
@@ -64,7 +64,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Dep1, Dep2, Dep3, Dep4, Dep5>(
+  public static func autocreate<Service, Dep1, Dep2, Dep3, Dep4, Dep5>(
     _ initializer: @escaping (Dep1, Dep2, Dep3, Dep4, Dep5) -> Service
   ) -> (Resolver) -> () -> Service {
     return { resolver in
@@ -79,7 +79,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6>(
+  public static func autocreate<Service, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6>(
     _ initializer: @escaping (Dep1, Dep2, Dep3, Dep4, Dep5, Dep6) -> Service
   ) -> (Resolver) -> () -> Service {
     return { resolver in
@@ -95,7 +95,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7>(
+  public static func autocreate<Service, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7>(
     _ initializer: @escaping (Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7) -> Service
   ) -> (Resolver) -> () -> Service {
     return { resolver in
@@ -112,7 +112,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8>(
+  public static func autocreate<Service, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8>(
     _ initializer: @escaping (Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8) -> Service
   ) -> (Resolver) -> () -> Service {
     return { resolver in
@@ -130,7 +130,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8, Dep9>(
+  public static func autocreate<Service, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8, Dep9>(
     _ initializer: @escaping (Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8, Dep9) -> Service
   ) -> (Resolver) -> () -> Service {
     return { resolver in
@@ -149,7 +149,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1>(
+  public static func autocreate<Service, Arg1>(
     _ initializer: @escaping (Arg1) -> Service
   ) -> (Resolver) -> (Arg1) -> Service {
     return { resolver in
@@ -159,7 +159,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Dep1>(
+  public static func autocreate<Service, Arg1, Dep1>(
     _ initializer: @escaping (Arg1, Dep1) -> Service
   ) -> (Resolver) -> (Arg1) -> Service {
     return { resolver in
@@ -170,7 +170,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Dep1, Dep2>(
+  public static func autocreate<Service, Arg1, Dep1, Dep2>(
     _ initializer: @escaping (Arg1, Dep1, Dep2) -> Service
   ) -> (Resolver) -> (Arg1) -> Service {
     return { resolver in
@@ -182,7 +182,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Dep1, Dep2, Dep3>(
+  public static func autocreate<Service, Arg1, Dep1, Dep2, Dep3>(
     _ initializer: @escaping (Arg1, Dep1, Dep2, Dep3) -> Service
   ) -> (Resolver) -> (Arg1) -> Service {
     return { resolver in
@@ -195,7 +195,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Dep1, Dep2, Dep3, Dep4>(
+  public static func autocreate<Service, Arg1, Dep1, Dep2, Dep3, Dep4>(
     _ initializer: @escaping (Arg1, Dep1, Dep2, Dep3, Dep4) -> Service
   ) -> (Resolver) -> (Arg1) -> Service {
     return { resolver in
@@ -209,7 +209,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Dep1, Dep2, Dep3, Dep4, Dep5>(
+  public static func autocreate<Service, Arg1, Dep1, Dep2, Dep3, Dep4, Dep5>(
     _ initializer: @escaping (Arg1, Dep1, Dep2, Dep3, Dep4, Dep5) -> Service
   ) -> (Resolver) -> (Arg1) -> Service {
     return { resolver in
@@ -224,7 +224,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6>(
+  public static func autocreate<Service, Arg1, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6>(
     _ initializer: @escaping (Arg1, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6) -> Service
   ) -> (Resolver) -> (Arg1) -> Service {
     return { resolver in
@@ -240,7 +240,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7>(
+  public static func autocreate<Service, Arg1, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7>(
     _ initializer: @escaping (Arg1, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7) -> Service
   ) -> (Resolver) -> (Arg1) -> Service {
     return { resolver in
@@ -257,7 +257,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8>(
+  public static func autocreate<Service, Arg1, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8>(
     _ initializer: @escaping (Arg1, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8) -> Service
   ) -> (Resolver) -> (Arg1) -> Service {
     return { resolver in
@@ -275,7 +275,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8, Dep9>(
+  public static func autocreate<Service, Arg1, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8, Dep9>(
     _ initializer: @escaping (Arg1, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8, Dep9) -> Service
   ) -> (Resolver) -> (Arg1) -> Service {
     return { resolver in
@@ -294,7 +294,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2>(
+  public static func autocreate<Service, Arg1, Arg2>(
     _ initializer: @escaping (Arg1, Arg2) -> Service
   ) -> (Resolver) -> (Arg1, Arg2) -> Service {
     return { resolver in
@@ -304,7 +304,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Dep1>(
+  public static func autocreate<Service, Arg1, Arg2, Dep1>(
     _ initializer: @escaping (Arg1, Arg2, Dep1) -> Service
   ) -> (Resolver) -> (Arg1, Arg2) -> Service {
     return { resolver in
@@ -315,7 +315,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Dep1, Dep2>(
+  public static func autocreate<Service, Arg1, Arg2, Dep1, Dep2>(
     _ initializer: @escaping (Arg1, Arg2, Dep1, Dep2) -> Service
   ) -> (Resolver) -> (Arg1, Arg2) -> Service {
     return { resolver in
@@ -327,7 +327,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Dep1, Dep2, Dep3>(
+  public static func autocreate<Service, Arg1, Arg2, Dep1, Dep2, Dep3>(
     _ initializer: @escaping (Arg1, Arg2, Dep1, Dep2, Dep3) -> Service
   ) -> (Resolver) -> (Arg1, Arg2) -> Service {
     return { resolver in
@@ -340,7 +340,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Dep1, Dep2, Dep3, Dep4>(
+  public static func autocreate<Service, Arg1, Arg2, Dep1, Dep2, Dep3, Dep4>(
     _ initializer: @escaping (Arg1, Arg2, Dep1, Dep2, Dep3, Dep4) -> Service
   ) -> (Resolver) -> (Arg1, Arg2) -> Service {
     return { resolver in
@@ -354,7 +354,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Dep1, Dep2, Dep3, Dep4, Dep5>(
+  public static func autocreate<Service, Arg1, Arg2, Dep1, Dep2, Dep3, Dep4, Dep5>(
     _ initializer: @escaping (Arg1, Arg2, Dep1, Dep2, Dep3, Dep4, Dep5) -> Service
   ) -> (Resolver) -> (Arg1, Arg2) -> Service {
     return { resolver in
@@ -369,7 +369,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6>(
+  public static func autocreate<Service, Arg1, Arg2, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6>(
     _ initializer: @escaping (Arg1, Arg2, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6) -> Service
   ) -> (Resolver) -> (Arg1, Arg2) -> Service {
     return { resolver in
@@ -385,7 +385,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7>(
+  public static func autocreate<Service, Arg1, Arg2, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7>(
     _ initializer: @escaping (Arg1, Arg2, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7) -> Service
   ) -> (Resolver) -> (Arg1, Arg2) -> Service {
     return { resolver in
@@ -402,7 +402,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8>(
+  public static func autocreate<Service, Arg1, Arg2, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8>(
     _ initializer: @escaping (Arg1, Arg2, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8) -> Service
   ) -> (Resolver) -> (Arg1, Arg2) -> Service {
     return { resolver in
@@ -420,7 +420,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8, Dep9>(
+  public static func autocreate<Service, Arg1, Arg2, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8, Dep9>(
     _ initializer: @escaping (Arg1, Arg2, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8, Dep9) -> Service
   ) -> (Resolver) -> (Arg1, Arg2) -> Service {
     return { resolver in
@@ -439,7 +439,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3>(
     _ initializer: @escaping (Arg1, Arg2, Arg3) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3) -> Service {
     return { resolver in
@@ -449,7 +449,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Dep1>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Dep1>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Dep1) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3) -> Service {
     return { resolver in
@@ -460,7 +460,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Dep1, Dep2>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Dep1, Dep2>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Dep1, Dep2) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3) -> Service {
     return { resolver in
@@ -472,7 +472,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Dep1, Dep2, Dep3>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Dep1, Dep2, Dep3>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Dep1, Dep2, Dep3) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3) -> Service {
     return { resolver in
@@ -485,7 +485,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Dep1, Dep2, Dep3, Dep4>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Dep1, Dep2, Dep3, Dep4>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Dep1, Dep2, Dep3, Dep4) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3) -> Service {
     return { resolver in
@@ -499,7 +499,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Dep1, Dep2, Dep3, Dep4, Dep5>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Dep1, Dep2, Dep3, Dep4, Dep5>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Dep1, Dep2, Dep3, Dep4, Dep5) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3) -> Service {
     return { resolver in
@@ -514,7 +514,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3) -> Service {
     return { resolver in
@@ -530,7 +530,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3) -> Service {
     return { resolver in
@@ -547,7 +547,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3) -> Service {
     return { resolver in
@@ -565,7 +565,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8, Dep9>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8, Dep9>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8, Dep9) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3) -> Service {
     return { resolver in
@@ -584,7 +584,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4) -> Service {
     return { resolver in
@@ -594,7 +594,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Dep1>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Dep1>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Dep1) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4) -> Service {
     return { resolver in
@@ -605,7 +605,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Dep1, Dep2>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Dep1, Dep2>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Dep1, Dep2) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4) -> Service {
     return { resolver in
@@ -617,7 +617,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Dep1, Dep2, Dep3>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Dep1, Dep2, Dep3>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Dep1, Dep2, Dep3) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4) -> Service {
     return { resolver in
@@ -630,7 +630,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Dep1, Dep2, Dep3, Dep4>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Dep1, Dep2, Dep3, Dep4>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Dep1, Dep2, Dep3, Dep4) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4) -> Service {
     return { resolver in
@@ -644,7 +644,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Dep1, Dep2, Dep3, Dep4, Dep5>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Dep1, Dep2, Dep3, Dep4, Dep5>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Dep1, Dep2, Dep3, Dep4, Dep5) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4) -> Service {
     return { resolver in
@@ -659,7 +659,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4) -> Service {
     return { resolver in
@@ -675,7 +675,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4) -> Service {
     return { resolver in
@@ -692,7 +692,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4) -> Service {
     return { resolver in
@@ -710,7 +710,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8, Dep9>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8, Dep9>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8, Dep9) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4) -> Service {
     return { resolver in
@@ -729,7 +729,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5) -> Service {
     return { resolver in
@@ -739,7 +739,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Dep1>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Dep1>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Dep1) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5) -> Service {
     return { resolver in
@@ -750,7 +750,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Dep1, Dep2>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Dep1, Dep2>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Dep1, Dep2) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5) -> Service {
     return { resolver in
@@ -762,7 +762,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Dep1, Dep2, Dep3>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Dep1, Dep2, Dep3>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Dep1, Dep2, Dep3) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5) -> Service {
     return { resolver in
@@ -775,7 +775,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Dep1, Dep2, Dep3, Dep4>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Dep1, Dep2, Dep3, Dep4>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Dep1, Dep2, Dep3, Dep4) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5) -> Service {
     return { resolver in
@@ -789,7 +789,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Dep1, Dep2, Dep3, Dep4, Dep5>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Dep1, Dep2, Dep3, Dep4, Dep5>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Dep1, Dep2, Dep3, Dep4, Dep5) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5) -> Service {
     return { resolver in
@@ -804,7 +804,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5) -> Service {
     return { resolver in
@@ -820,7 +820,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5) -> Service {
     return { resolver in
@@ -837,7 +837,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5) -> Service {
     return { resolver in
@@ -855,7 +855,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8, Dep9>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8, Dep9>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8, Dep9) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5) -> Service {
     return { resolver in
@@ -874,7 +874,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6) -> Service {
     return { resolver in
@@ -884,7 +884,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Dep1>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Dep1>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Dep1) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6) -> Service {
     return { resolver in
@@ -895,7 +895,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Dep1, Dep2>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Dep1, Dep2>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Dep1, Dep2) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6) -> Service {
     return { resolver in
@@ -907,7 +907,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Dep1, Dep2, Dep3>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Dep1, Dep2, Dep3>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Dep1, Dep2, Dep3) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6) -> Service {
     return { resolver in
@@ -920,7 +920,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Dep1, Dep2, Dep3, Dep4>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Dep1, Dep2, Dep3, Dep4>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Dep1, Dep2, Dep3, Dep4) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6) -> Service {
     return { resolver in
@@ -934,7 +934,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Dep1, Dep2, Dep3, Dep4, Dep5>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Dep1, Dep2, Dep3, Dep4, Dep5>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Dep1, Dep2, Dep3, Dep4, Dep5) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6) -> Service {
     return { resolver in
@@ -949,7 +949,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6) -> Service {
     return { resolver in
@@ -965,7 +965,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6) -> Service {
     return { resolver in
@@ -982,7 +982,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6) -> Service {
     return { resolver in
@@ -1000,7 +1000,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8, Dep9>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8, Dep9>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8, Dep9) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6) -> Service {
     return { resolver in
@@ -1019,7 +1019,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7) -> Service {
     return { resolver in
@@ -1029,7 +1029,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Dep1>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Dep1>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Dep1) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7) -> Service {
     return { resolver in
@@ -1040,7 +1040,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Dep1, Dep2>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Dep1, Dep2>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Dep1, Dep2) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7) -> Service {
     return { resolver in
@@ -1052,7 +1052,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Dep1, Dep2, Dep3>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Dep1, Dep2, Dep3>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Dep1, Dep2, Dep3) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7) -> Service {
     return { resolver in
@@ -1065,7 +1065,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Dep1, Dep2, Dep3, Dep4>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Dep1, Dep2, Dep3, Dep4>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Dep1, Dep2, Dep3, Dep4) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7) -> Service {
     return { resolver in
@@ -1079,7 +1079,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Dep1, Dep2, Dep3, Dep4, Dep5>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Dep1, Dep2, Dep3, Dep4, Dep5>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Dep1, Dep2, Dep3, Dep4, Dep5) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7) -> Service {
     return { resolver in
@@ -1094,7 +1094,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7) -> Service {
     return { resolver in
@@ -1110,7 +1110,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7) -> Service {
     return { resolver in
@@ -1127,7 +1127,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7) -> Service {
     return { resolver in
@@ -1145,7 +1145,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8, Dep9>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8, Dep9>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8, Dep9) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7) -> Service {
     return { resolver in
@@ -1164,7 +1164,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8) -> Service {
     return { resolver in
@@ -1174,7 +1174,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Dep1>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Dep1>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Dep1) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8) -> Service {
     return { resolver in
@@ -1185,7 +1185,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Dep1, Dep2>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Dep1, Dep2>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Dep1, Dep2) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8) -> Service {
     return { resolver in
@@ -1197,7 +1197,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Dep1, Dep2, Dep3>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Dep1, Dep2, Dep3>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Dep1, Dep2, Dep3) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8) -> Service {
     return { resolver in
@@ -1210,7 +1210,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Dep1, Dep2, Dep3, Dep4>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Dep1, Dep2, Dep3, Dep4>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Dep1, Dep2, Dep3, Dep4) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8) -> Service {
     return { resolver in
@@ -1224,7 +1224,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Dep1, Dep2, Dep3, Dep4, Dep5>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Dep1, Dep2, Dep3, Dep4, Dep5>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Dep1, Dep2, Dep3, Dep4, Dep5) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8) -> Service {
     return { resolver in
@@ -1239,7 +1239,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8) -> Service {
     return { resolver in
@@ -1255,7 +1255,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8) -> Service {
     return { resolver in
@@ -1272,7 +1272,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8) -> Service {
     return { resolver in
@@ -1290,7 +1290,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8, Dep9>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8, Dep9>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8, Dep9) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8) -> Service {
     return { resolver in
@@ -1309,7 +1309,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9) -> Service {
     return { resolver in
@@ -1319,7 +1319,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Dep1>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Dep1>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Dep1) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9) -> Service {
     return { resolver in
@@ -1330,7 +1330,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Dep1, Dep2>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Dep1, Dep2>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Dep1, Dep2) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9) -> Service {
     return { resolver in
@@ -1342,7 +1342,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Dep1, Dep2, Dep3>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Dep1, Dep2, Dep3>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Dep1, Dep2, Dep3) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9) -> Service {
     return { resolver in
@@ -1355,7 +1355,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Dep1, Dep2, Dep3, Dep4>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Dep1, Dep2, Dep3, Dep4>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Dep1, Dep2, Dep3, Dep4) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9) -> Service {
     return { resolver in
@@ -1369,7 +1369,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Dep1, Dep2, Dep3, Dep4, Dep5>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Dep1, Dep2, Dep3, Dep4, Dep5>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Dep1, Dep2, Dep3, Dep4, Dep5) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9) -> Service {
     return { resolver in
@@ -1384,7 +1384,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9) -> Service {
     return { resolver in
@@ -1400,7 +1400,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9) -> Service {
     return { resolver in
@@ -1417,7 +1417,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9) -> Service {
     return { resolver in
@@ -1435,7 +1435,7 @@ public extension FactoryExtension where Base: FactoryInjectable {
     }
   }
 
-  public static func create<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8, Dep9>(
+  public static func autocreate<Service, Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8, Dep9>(
     _ initializer: @escaping (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9, Dep1, Dep2, Dep3, Dep4, Dep5, Dep6, Dep7, Dep8, Dep9) -> Service
   ) -> (Resolver) -> (Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9) -> Service {
     return { resolver in
