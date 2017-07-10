@@ -1,0 +1,43 @@
+import protocol Swinject.Resolver
+
+<% puts "// WARNING: This swift file is auto generated. Don't modify this file directly.\n\n" %>
+<% arguments = 0..9 %>
+<% dependencies = 0..9 %>
+
+public extension FactoryExtension where Base: FactoryInjectable {
+<%
+  for arg in arguments
+    for dep in dependencies
+      argument_range = 1..arg
+      dependency_range = 1..dep
+
+      argument_types = argument_range.map { |i| "Arg#{i}" }
+      argument_types_str = argument_types.join(", ")
+      dependency_types = dependency_range.map { |i| "Dep#{i}" }
+      initializer_types = argument_types + dependency_types
+      initializer_types_str = initializer_types.join(", ")
+      generic_types = ["Service"] + initializer_types
+      generic_types_str = generic_types.join(", ")
+
+      argument_params = argument_range.map { |i| "arg#{i}" }
+      argument_params_str = argument_params.join(", ")
+      dependencies_params = dependency_range.map { |i| "dep#{i}" }
+      initializer_params = argument_params + dependencies_params
+      initializer_params_str = initializer_params.join(", ")
+%>
+  public static func create<<%= generic_types_str %>>(
+    _ initializer: @escaping (<%= initializer_types_str %>) -> Service
+  ) -> (Resolver) -> (<%= argument_types_str %>) -> Service {
+    return { resolver in
+      return { (<%= argument_params_str %>) in
+<%      for i in dependency_range %>
+        let dep<%= i %> = resolver.resolve(Dep<%= i %>.self)!
+<%      end %>
+        return initializer(<%= initializer_params_str %>)
+      }
+    }
+  }
+
+<% end %>
+<% end %>
+}
