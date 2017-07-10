@@ -1,0 +1,12 @@
+{
+  "autoPin": true,
+  "pins": [
+    {
+      "package": "Swinject",
+      "reason": null,
+      "repositoryURL": "https://github.com/Swinject/Swinject",
+      "version": "2.1.0"
+    }
+  ],
+  "version": 1
+}
